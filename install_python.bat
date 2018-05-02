@@ -32,7 +32,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\32bit\python-3.5.4.exe" ^
 		/passive /norestart ^
-	    InstallAllUsers=1 ^
+		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.5.4"
@@ -43,7 +43,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\32bit\python-3.6.5.exe" ^
 		/passive /norestart ^
-	    InstallAllUsers=1 ^
+		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.6.5"
@@ -67,7 +67,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.5.4-amd64.exe" ^
 		/passive /norestart ^
-	    InstallAllUsers=1 ^
+		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.5.4"
@@ -78,7 +78,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.6.5-amd64.exe" ^
 		/passive /norestart ^
-	    InstallAllUsers=1 ^
+		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.6.5"
