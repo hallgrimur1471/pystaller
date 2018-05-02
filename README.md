@@ -8,6 +8,8 @@ This repository is in its early stages.
 Not all the features that are listed below are implemented yet.
 ```
 
+# Features
+
 `install_python.bat` will install Python with the following features:
 
 * The command `python2.7` will run python2.7.15
