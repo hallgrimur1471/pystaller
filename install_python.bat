@@ -21,7 +21,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM Documentation for argument options:
 	REM     https://www.python.org/download/releases/2.4/msi/
 	msiexec /i "!winthon!installers\32bit\python-2.7.15.msi" ^
-	    /passive /norestart ^
+		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
 		TARGETDIR="!winthon!bin\python2.7.15"
@@ -56,7 +56,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM Documentation for argument options:
 	REM     https://www.python.org/download/releases/2.4/msi/
 	msiexec /i "!winthon!installers\64bit\python-2.7.15.amd64.msi" ^
-	    /passive /norestart ^
+		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
 		TARGETDIR="!winthon!bin\python2.7.15"

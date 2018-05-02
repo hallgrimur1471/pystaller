@@ -21,7 +21,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM Documentation for argument options:
 	REM     https://www.python.org/download/releases/2.4/msi/
 	msiexec /x "!winthon!installers\32bit\python-2.7.15.msi" ^
-	    /passive /norestart ^
+		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
 		TARGETDIR="!winthon!bin\python2.7.15"
@@ -32,7 +32,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\32bit\python-3.5.4.exe" ^
 		/uninstall /norestart ^
-	    UninstallAllUsers=1 ^
+		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.5.4"
@@ -43,7 +43,7 @@ if "%bitarchitecture%"=="32bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\32bit\python-3.6.5.exe" ^
 		/uninstall /norestart ^
-	    UninstallAllUsers=1 ^
+		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.6.5"
@@ -56,7 +56,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM Documentation for argument options:
 	REM     https://www.python.org/download/releases/2.4/msi/
 	msiexec /x "!winthon!installers\64bit\python-2.7.15.amd64.msi" ^
-	    /passive /norestart ^
+		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
 		TARGETDIR="!winthon!bin\python2.7.15"
@@ -67,7 +67,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.5.4-amd64.exe" ^
 		/uninstall /norestart ^
-	    UninstallAllUsers=1 ^
+		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.5.4"
@@ -78,7 +78,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.6.5-amd64.exe" ^
 		/uninstall /norestart ^
-	    UninstallAllUsers=1 ^
+		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
 		TargetDir="!winthon!bin\python3.6.5"
