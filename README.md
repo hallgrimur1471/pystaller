@@ -1,6 +1,6 @@
 # Winthon
 
-Scripts for quickly setting up and configuring Python.
+Scripts for quickly setting up and configuring Python on Windows machines.
 
 NOTE:
 ```
