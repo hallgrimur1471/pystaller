@@ -1,12 +1,12 @@
 # Winthon
 
+Scripts for quickly setting up and configuring Python.
+
 NOTE:
 ```
 This repository is in its early stages.
 Not all the features that are listed below are implemented yet.
 ```
-
-Scripts for quickly setting up and configuring Python.
 
 The scripts will install Python with the following features:
 
