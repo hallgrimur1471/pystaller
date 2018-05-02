@@ -66,7 +66,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM Documentation for argument options:
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.5.4-amd64.exe" ^
-		/uninstall /norestart ^
+		/uninstall /passive /norestart ^
 		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
@@ -77,7 +77,7 @@ if "%bitarchitecture%"=="64bit" (
 	REM Documentation for argument options:
 	REM     https://docs.python.org/3.6/using/windows.html
 	"!winthon!installers\64bit\python-3.6.5-amd64.exe" ^
-		/uninstall /norestart ^
+		/uninstall /passive /norestart ^
 		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
