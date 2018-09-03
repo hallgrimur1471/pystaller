@@ -3,10 +3,11 @@
 # maybe display help
 displayHelp() {
   printf "Usage: . ./test_install_python_ubuntu_16.sh\n"
-  printf "Builds a ubuntu16.04 docker container that installs python with the "
-  printf "'install_python_ubuntu_16.sh' script. After the container has been "
-  printf "built a python installation test is run in the container, you will "
-  printf "see the output from the test if you run this script.\n"
+  printf "Builds a ubuntu16.04 docker image that installs python with the "
+  printf "'install_python_ubuntu_16.sh' script. After the image has been "
+  printf "built the container is spawned and a python installation test "
+  printf "is run, you will see the output from the test if you run "
+  printf "this script.\n"
 }
 thereIsAHelpArgument() { [[($# -eq 1 && ($1 = -h || $1 = --help)) ]]; }
 if thereIsAHelpArgument "$@"; then
@@ -44,29 +45,6 @@ else
 \ \ \ 'END {print passes}') # checks if version number is high enough
   if [[ "$compatible_version" == "false" ]]; then
     error "Your docker --version must be >= 18.03"
-  fi
-fi
-
-# make sure that docker-compose is installed
-docker-compose --version > /dev/null 2>&1
-if [[ "$?" != "0" ]]; then
-  error "docker-compose is not installed (at least not on \$PATH)"
-else
-  # check that we have docker-compose version >= 1.18
-  # lower version might work but 1.18 was tested to work.
-  # example output from docker-compose --version
-  #     docker-compose version 1.18.0, build 8dd22a9
-  output="`docker-compose --version 2>/dev/null`"
-  compatible_version=$( \
-    echo "$output" \
-    | awk '{print $3}' `# returns version number` \
-    | awk -F '.' \
-\ \ \ 'BEGIN {passes="true"}'\
-\ \ \ '$1 < 1 {passes="false"}'\
-\ \ \ '$2 < 18 {passes="false"}'\
-\ \ \ 'END {print passes}') # checks if version number is high enough
-  if [[ "$compatible_version" == "false" ]]; then
-    error "Your docker-compose --version must be >= 1.18"
   fi
 fi
 
