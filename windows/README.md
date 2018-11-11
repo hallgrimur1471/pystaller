@@ -2,31 +2,27 @@
 
 Scripts for quickly setting up and configuring Python on Windows machines.
 
-NOTE:
-```
-This repository is in its early stages.
-Not all the features that are listed below are implemented yet.
-```
-
 # Features
 
 `install_python.bat` will install Python with the following features:
 
-* The command `python2.7` will run python2.7.15
-* The command `python3.5` will run python3.5.4
-* The command `python3.6` will run python3.6.5
-* The command `python` will run python3.6.5
+* The command `python2` will run python2.7.15
+* The command `python3` will run python3.7.1
 
-* The command `pip2.7` will run python2.7.15's pip installation
-* The command `pip3.5` will run python3.5.4's pip installation
-* The command `pip3.6` will run python3.6.5's pip installation
-* The command `pip` will run python3.6.5's pip installation
+* The command `python2 -m pip` will run pip for python2.7
+* The command `python3 -m pip` will run pip for python3.7
 
-When python scripts are run directly in Command Prompt:
+If you want to run programs using python2.7 do it like this:
 
-* Python scripts starting with the shebang `#!/usr/bin/env python2.7` will be run with python2.7.15
-* Python scripts starting with the shebang `#!/usr/bin/env python3.5` will be run with python3.5.4
-* Python scripts starting with the shebang `#!/usr/bin/env python3.6` will be run with python3.6.5
+```
+python2 some_program.py
+```
+
+And with python3.7:
+
+```
+python3 some_program.py
+```
 
 ## Installing:
 

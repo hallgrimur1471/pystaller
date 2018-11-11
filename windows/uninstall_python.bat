@@ -24,31 +24,18 @@ if "%bitarchitecture%"=="32bit" (
 		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
-		TARGETDIR="!winthon!bin\python2.7.15"
+		TARGETDIR="!winthon!bin\python2.7.15" | REM
 	
-	REM Uninstall python3.5.4
+	REM Uninstall python3.7.1
 	REM
 	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\32bit\python-3.5.4.exe" ^
+	REM     https://docs.python.org/3.7/using/windows.html
+	"!winthon!installers\32bit\python-3.7.1.exe" ^
 		/uninstall /norestart ^
 		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.5.4"
-	
-	REM Uninstall python3.6.5
-	REM
-	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\32bit\python-3.6.5.exe" ^
-		/uninstall /norestart ^
-		UninstallAllUsers=1 ^
-		CompileAll=1 ^
-		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.6.5"
-	
-	exit /B 0
+		TargetDir="!winthon!bin\python3.7.1" | REM
 )
 if "%bitarchitecture%"=="64bit" (
 	REM Uninstall python2.7.15
@@ -59,29 +46,25 @@ if "%bitarchitecture%"=="64bit" (
 		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
-		TARGETDIR="!winthon!bin\python2.7.15"
+		TARGETDIR="!winthon!bin\python2.7.15" | REM
 	
-	REM Uninstall python3.5.4
+	REM Uninstall python3.7.1
 	REM
 	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\64bit\python-3.5.4-amd64.exe" ^
+	REM     https://docs.python.org/3.7/using/windows.html
+	"!winthon!installers\64bit\python-3.7.1-amd64.exe" ^
 		/uninstall /passive /norestart ^
 		UninstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.5.4"
-	
-	REM Uninstall python3.6.5
-	REM
-	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\64bit\python-3.6.5-amd64.exe" ^
-		/uninstall /passive /norestart ^
-		UninstallAllUsers=1 ^
-		CompileAll=1 ^
-		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.6.5"
-	
-	exit /B 0
+		TargetDir="!winthon!bin\python3.7.1" | REM
 )
+
+powershell -Command ^
+	Remove-Item ^
+	    -Path "!winthon!bin\python2.7.15" -recurse
+powershell -Command ^
+	Remove-Item ^
+	    -Path "!winthon!bin\python3.7.1" -recurse
+	
+exit /B 0

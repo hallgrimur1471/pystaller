@@ -24,31 +24,18 @@ if "%bitarchitecture%"=="32bit" (
 		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
-		TARGETDIR="!winthon!bin\python2.7.15"
+		TARGETDIR="!winthon!bin\python2.7.15" | REM
 	
-	REM Install python3.5.4
+	REM Install python3.7.1
 	REM
 	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\32bit\python-3.5.4.exe" ^
+	REM     https://docs.python.org/3.7/using/windows.html
+	"!winthon!installers\32bit\python-3.7.1.exe" ^
 		/passive /norestart ^
 		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.5.4"
-	
-	REM Install python3.6.5
-	REM
-	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\32bit\python-3.6.5.exe" ^
-		/passive /norestart ^
-		InstallAllUsers=1 ^
-		CompileAll=1 ^
-		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.6.5"
-	
-	exit /B 0
+		TargetDir="!winthon!bin\python3.7.1" | REM
 )
 if "%bitarchitecture%"=="64bit" (
 	REM Install python2.7.15
@@ -59,29 +46,29 @@ if "%bitarchitecture%"=="64bit" (
 		/passive /norestart ^
 		ADDLOCAL=ALL ^
 		ALLUSERS=1 ^
-		TARGETDIR="!winthon!bin\python2.7.15"
+		TARGETDIR="!winthon!bin\python2.7.15" | REM
 	
-	REM Install python3.5.4
+	REM Install python3.7.1
 	REM
 	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\64bit\python-3.5.4-amd64.exe" ^
+	REM     https://docs.python.org/3.7/using/windows.html
+	"!winthon!installers\64bit\python-3.7.1-amd64.exe" ^
 		/passive /norestart ^
 		InstallAllUsers=1 ^
 		CompileAll=1 ^
 		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.5.4"
-	
-	REM Install python3.6.5
-	REM
-	REM Documentation for argument options:
-	REM     https://docs.python.org/3.6/using/windows.html
-	"!winthon!installers\64bit\python-3.6.5-amd64.exe" ^
-		/passive /norestart ^
-		InstallAllUsers=1 ^
-		CompileAll=1 ^
-		PrependPath=1 ^
-		TargetDir="!winthon!bin\python3.6.5"
-	
-	exit /B 0
+		TargetDir="!winthon!bin\python3.7.1" | REM
 )
+
+REM Make python2 point to python2.7, and python and python3
+REM point to python3.7
+powershell -Command ^
+    Move-Item ^
+        -Path "!winthon!bin\python2.7.15\python.exe" ^
+        -Destination "!winthon!bin\python2.7.15\python2.exe"
+powershell -Command ^
+    Copy-Item ^
+        -Path "!winthon!bin\python3.7.1\python.exe" ^
+        -Destination "!winthon!bin\python3.7.1\python3.exe"
+	
+exit /B 0
